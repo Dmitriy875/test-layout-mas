@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #FEFEFE;
+  font-family: sansation;
+  background-color: #3F3F3F;
+}
+
+section.about-us {
+  background-color: #FEFEFE;
+  color: #292929;
+}
+
+button {
+  background-color: #939393;
+  color: #f7f7f7;
+}
+
+input[type="text"] {
+
+}
+
+p {
+
+}
