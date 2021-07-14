@@ -9,11 +9,209 @@ body {
   background-color: #3F3F3F;
 }
 
-section.about-us {
-  background-color: #FEFEFE;
-  color: #292929;
+a, a:visited, a:active {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: sansation;
 }
 
+div.logo {
+  font-size: 24px;
+  text-align: center;
+  /* vertical-align: middle; */
+  height: 100%;
+  /* content: ""; */
+}
+
+  span.logo-begin {
+    color: #ffffff;
+    /* display: inline-block;
+    vertical-align: middle; */
+  }
+
+  span.logo-end {
+    color: #da2346;
+  }
+
+#wrapper {
+  max-width: 999px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-areas:
+  "header"
+  "about"
+  "services"
+  "feed"
+  "clients"
+  "quote"
+  "footer"
+}
+
+header {
+  grid-area: header;
+  background-image: url(../img/ap-ui.png);
+  background-size: cover;
+  min-height: 62px;
+
+  display: grid;
+  grid-template-areas:
+  "logo nav social"
+  "banner banner banner";
+  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-rows: 1fr;
+}
+
+  nav {
+    grid-area: nav;
+  }
+
+    ul.menu {
+      text-align: center;
+    }
+
+    ul.menu > li {
+      display: inline-block;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    ul.menu > li > a:hover {
+      color: #097e89;
+    }
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .social {
+    grid-area: social;
+  }
+
+  img {
+    filter: contrast(0.01);
+  }
+
+  section.banner {
+    color: #ffffff;
+    grid-area: banner;
+    min-height: 552px;
+    border-top: solid 1px;
+    border-color: #624F81;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 8fr 2fr 1fr;
+    grid-template-rows: 30% 1fr 2fr 0.5fr 1fr 1fr 3fr;
+    grid-template-areas:
+    ". . . . ."
+    ". bl bt br ."
+    ". bl title br ."
+    "arrow-l bl descr br arrow-r"
+    ". bl button br ."
+    ". . . . ."
+    ". . . . ."
+    ;
+  }
+
+    .banner-title {
+      grid-area: title;
+      font-size: 1.7em;
+    }
+
+    .banner-description {
+      grid-area: descr;
+      font-size: 0.6em;
+    }
+
+    .banner-button {
+      grid-area: button;
+      align-self: end;
+    }
+    .banner-button button {
+      padding: 0.5em 2.4em;
+      border: 3px solid;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    .arrow {
+      grid-area: arrow-l;
+      border: 1px solid;
+      border-color: #706185;
+      border-radius: 5%;
+      font-size: 1.4em;
+      color: #706185;
+      width: 27px;
+      cursor: pointer;
+      justify-self: end;
+    }
+    .arrow2 {
+      grid-area: arrow-r;
+      border: 1px solid;
+      border-color: #706185;
+      border-radius: 5%;
+      font-size: 1.4em;
+      color: #706185;
+      width: 27px;
+      cursor: pointer;
+    }
+
+    .border-top {
+      grid-area: bt;
+      border-top: 1px solid #706185;
+    }
+
+    .border-right {
+      grid-area: br;
+      border-left: 1px solid #66567C;
+    }
+
+    .border-left {
+      grid-area: bl;
+      border-right: 1px solid #4B356A;
+    }
+
+section.about-us {
+  background-color: orange;
+  color: #292929;
+  grid-area: about;
+  min-height: 425px;
+}
+
+section.services {
+  background-color: #d7d7d7;
+  color: #292929;
+  grid-area: services;
+  min-height: 692px;
+}
+
+section.feedback {
+  background-color: #d7d7d7;
+  color: #292929;
+  grid-area: feed;
+  min-height: 420px;
+}
+section.clients {
+  background-color: #d7d7d7;
+  color: #292929;
+  grid-area: clients;
+  min-height: 529px;
+}
+section.quote {
+  background-color: #d7d7d7;
+  color: #292929;
+  grid-area: quote;
+  min-height: 173px;
+}
+
+footer {
+  background-color: #d7d7d7;
+  color: #292929;
+  grid-area: footer;
+  min-height: 209px;
+}
 button {
   background-color: #939393;
   color: #f7f7f7;
