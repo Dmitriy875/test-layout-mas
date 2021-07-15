@@ -7,7 +7,7 @@
 body {
   color: #FEFEFE;
   font-family: sansation;
-  background-color: #3F3F3F;
+  background-color: #3A393A;
 }
 
 a, a:visited, a:active {
@@ -102,7 +102,7 @@ header {
 
 
 
-  img {
+  img.sprite {
     filter: contrast(0.01);
   }
 
@@ -191,13 +191,11 @@ header {
       border-bottom: 2px solid #252525;
       right: 82%;
     }
-
 /********* END HEADER *********/
 
 /********* ABOUT US *********/
 
 section.about-us {
-  background-color: orange;
   color: #292929;
   grid-area: about;
   min-height: 425px;
@@ -243,17 +241,100 @@ section.about-us {
     background-color: #009EAB;
     padding: 0.5em 2.4em;
   }
-
 /********* END ABOUT US *********/
 
-/********* SERVIVES *********/
+/********* SERVICES *********/
 
 section.services {
-  background-color: #d7d7d7;
-  color: #292929;
   grid-area: services;
   min-height: 692px;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr 4fr 1fr 3fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+  "bsll bssl title bssr bslr"
+  "item1 item1 item2 item3 item3";
 }
+
+  .services-title {
+    grid-area: title;
+    align-self: center;
+    font-size: 2.5em;
+    background-color: #3A393A;
+    height: 100%;
+    display: flex;
+  }
+
+  .exp {
+    margin: auto;
+  }
+
+  .services-item1 {
+    grid-area: item1;
+    background-color: #3F3F3F;
+  }
+  .services-item2 {
+    grid-area: item2;
+    background-color: #097e89;
+  }
+  .services-item3 {
+    grid-area: item3;
+    background-color: #3F3F3F;
+  }
+
+  .item-title {
+    font-size: 1.5em;
+    color: #F5F5F5;
+  }
+
+  .item-pattern {
+    padding-top: 40%;
+  }
+
+  .item-text {
+    color: #F5F5F5;
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid #E2E2E2;
+    overflow: hidden;
+    background-color: #3A393A;
+  }
+
+  .border-services-short-l {
+    grid-area: bssl;
+    border-top: 3px solid #FEFEFE;
+    position: relative;
+    top: 50%;
+  }
+  .border-services-short-r {
+    grid-area: bssr;
+    border-top: 3px solid #FEFEFE;
+    position: relative;
+    top: 50%;
+  }
+
+  .border-services-long-l {
+    grid-area: bsll;
+    border-top: 1px solid #FEFEFE;
+    position: relative;
+    top: 51%;
+  }
+  .border-services-long-r {
+    grid-area: bslr;
+    border-top: 1px solid #FEFEFE;
+    position: relative;
+    top: 51%;
+  }
+
+  .services-item-button {
+    background-color: #939393;
+    padding: 0.5em 2em;
+    margin-top: 3em;
+  }
+/********* END SERVICES *********/
 
 section.feedback {
   background-color: #d7d7d7;
