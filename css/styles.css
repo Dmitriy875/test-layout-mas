@@ -1,3 +1,4 @@
+/********* COMMON *********/
 * {
   padding: 0;
   margin: 0;
@@ -16,23 +17,16 @@ a, a:visited, a:active {
   font-family: sansation;
 }
 
-div.logo {
-  font-size: 24px;
-  text-align: center;
-  /* vertical-align: middle; */
-  height: 100%;
-  /* content: ""; */
+.uppercase {
+  text-transform: uppercase;
 }
 
-  span.logo-begin {
-    color: #ffffff;
-    /* display: inline-block;
-    vertical-align: middle; */
-  }
+p {
+  padding-top: 1em;
+}
+/********* END COMMON *********/
 
-  span.logo-end {
-    color: #da2346;
-  }
+
 
 #wrapper {
   max-width: 999px;
@@ -48,6 +42,8 @@ div.logo {
   "quote"
   "footer"
 }
+
+/********* HEADER *********/
 
 header {
   grid-area: header;
@@ -81,13 +77,30 @@ header {
       color: #097e89;
     }
 
-  .logo {
-    grid-area: logo;
-  }
+    div.logo {
+      grid-area: logo;
+      font-size: 24px;
+      text-align: center;
+      /* vertical-align: middle; */
+      height: 100%;
+      /* content: ""; */
+    }
 
-  .social {
-    grid-area: social;
-  }
+      span.logo-begin {
+        color: #ffffff;
+        /* display: inline-block;
+        vertical-align: middle; */
+      }
+
+      span.logo-end {
+        color: #da2346;
+      }
+
+    .social {
+      grid-area: social;
+    }
+
+
 
   img {
     filter: contrast(0.01);
@@ -129,7 +142,7 @@ header {
       grid-area: button;
       align-self: end;
     }
-    .banner-button button {
+    .banner-button > button {
       padding: 0.5em 2.4em;
       border: 3px solid;
       background-color: transparent;
@@ -173,12 +186,67 @@ header {
       border-right: 1px solid #4B356A;
     }
 
+    .border-bottom-short {
+      position: relative;
+      border-bottom: 2px solid #252525;
+      right: 82%;
+    }
+
+/********* END HEADER *********/
+
+/********* ABOUT US *********/
+
 section.about-us {
   background-color: orange;
   color: #292929;
   grid-area: about;
   min-height: 425px;
+
+  display: grid;
+  grid-template-areas: "img text";
+  grid-template-columns: 1fr 1fr;
 }
+
+.about_img {
+  grid-area: img;
+  background-image: url("../img/write-593333_1920.png");
+  background-size: cover;
+}
+
+.about_text {
+  grid-area: text;
+  background-color: #FEFEFE;
+
+  display: grid;
+  grid-template-columns: 1fr 9fr 2fr;
+  grid-template-areas:
+  ". title ."
+  ". about ."
+  ". button .";
+}
+  .about_text-title {
+    grid-area: title;
+    font-size: 2em;
+    border-bottom: 2px solid;
+    align-self: end;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+  }
+  .about_text-about {
+    grid-area: about;
+    font-size: 0.8em;
+  }
+  .about_text-button {
+    grid-area: button;
+  }
+  .about_text-button > button {
+    background-color: #009EAB;
+    padding: 0.5em 2.4em;
+  }
+
+/********* END ABOUT US *********/
+
+/********* SERVIVES *********/
 
 section.services {
   background-color: #d7d7d7;
