@@ -339,6 +339,7 @@ section.services {
 /********* END SERVICES *********/
 
 /********* FEEDBACK *********/
+
 section.feedback {
   grid-area: feed;
   min-height: 420px;
@@ -405,14 +406,106 @@ section.feedback {
           float:right;
           text-align: left;
         }
-
 /********* END FEEDBACK *********/
+/********* CLIENTS *********/
+
 section.clients {
-  background-color: #d7d7d7;
-  color: #292929;
+  background-color: #FEFEFE;
+  color: #656363;
   grid-area: clients;
   min-height: 529px;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr 4fr 1fr 3fr;
+  grid-template-rows: 1fr 0.2fr 2.5fr 0.8fr;
+  grid-template-areas:
+  "bsll bssl title bssr bslr"
+  "dd dd dd dd dd"
+  "clients clients clients clients clients"
+  ". . . . .";
 }
+
+.clients-title {
+  grid-area: title;
+  align-self: center;
+  font-size: 2.5em;
+  background-color: #FEFEFE;
+  height: 100%;
+  display: flex;
+  min-height: 116px;
+  font-weight: bold;
+}
+
+.clients-divider {
+  grid-area: dd;
+  background-color: #F9F9F9;
+}
+
+.clients-logo {
+  grid-area: clients;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  "logo1 logo2 logo3 logo4"
+  "logo5 logo6 logo7 logo8";
+  align-items: center;
+  justify-items: center;
+}
+
+div.logo1 {
+  grid-area: logo1;
+}
+div.logo2 {
+  grid-area: logo2;
+}
+div.logo3 {
+  grid-area: logo3;
+}
+div.logo4 {
+  grid-area: logo4;
+}
+div.logo5 {
+  grid-area: logo5;
+}
+div.logo7 {
+  grid-area: logo6;
+}
+div.logo7 {
+  grid-area: logo7;
+}
+div.logo8 {
+  grid-area: logo8;
+}
+
+.border-clients-short-l {
+  grid-area: bssl;
+  border-top: 3px solid #656363;
+  position: relative;
+  top: 60%;
+}
+.border-clients-short-r {
+  grid-area: bssr;
+  border-top: 3px solid #656363;
+  position: relative;
+  top: 60%;
+}
+
+.border-clients-long-l {
+  grid-area: bsll;
+  border-top: 1px solid #656363;
+  position: relative;
+  top: 61%;
+}
+.border-clients-long-r {
+  grid-area: bslr;
+  border-top: 1px solid #656363;
+  position: relative;
+  top: 61%;
+}
+/********* END CLIENTS *********/
+
 section.quote {
   background-color: #d7d7d7;
   color: #292929;
