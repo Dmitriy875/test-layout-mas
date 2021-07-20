@@ -506,12 +506,49 @@ div.logo8 {
 }
 /********* END CLIENTS *********/
 
+/********* QUOTE *********/
 section.quote {
-  background-color: #d7d7d7;
-  color: #292929;
+  background-color: #007D86;
   grid-area: quote;
   min-height: 173px;
+
+  display: grid;
+  grid-template-areas:
+  ". quote inputs .";
+  grid-template-columns: 0.15fr 1fr 2fr 0.15fr;
 }
+
+.quote-text {
+  grid-area: quote;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+  .quote-title {
+    font-size: 2em;
+  }
+  .quote-text {
+    font-size: 0.8em;
+  }
+
+.quote-inputs {
+  grid-area: inputs;
+  height: 25%;
+
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.quote-inputs > button {
+  background-color: #FEFEFE;
+  color: #007D86;
+  width: 6em;
+  border: 1px solid #FEFEFE;
+  font-family: "Myriad pro";
+}
+/********* END QUOTE *********/
 
 footer {
   background-color: #d7d7d7;
@@ -522,12 +559,15 @@ footer {
 button {
   background-color: #939393;
   color: #f7f7f7;
+
 }
 
 input[type="text"] {
-
-}
-
-p {
-
+  margin: 0;
+  padding: 0;
+  width: 12em;
+  background-color: #007D86;
+  color: #FEFEFE;
+  border: 1px solid #FEFEFE;
+  padding-left: 1em;
 }
