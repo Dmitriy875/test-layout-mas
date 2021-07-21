@@ -13,7 +13,6 @@ body {
 a, a:visited, a:active {
   text-decoration: none;
   color: #ffffff;
-  font-size: 20px;
   font-family: sansation;
 }
 
@@ -38,34 +37,12 @@ button {
   background-color: #3A393A;
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   min-height: 116px;
 }
 
-.border-services-feedback-short-l {
-  grid-area: bssl;
-  border-top: 3px solid #FEFEFE;
-  position: relative;
-  top: 60%;
-}
-.border-services-feedback-short-r {
-  grid-area: bssr;
-  border-top: 3px solid #FEFEFE;
-  position: relative;
-  top: 60%;
-}
-
-.border-services-feedback-long-l {
-  grid-area: bsll;
-  border-top: 1px solid #FEFEFE;
-  position: relative;
-  top: 61%;
-}
-.border-services-feedback-long-r {
-  grid-area: bslr;
-  border-top: 1px solid #FEFEFE;
-  position: relative;
-  top: 61%;
-}
 /********* END COMMON *********/
 
 
@@ -91,28 +68,35 @@ header {
   grid-area: header;
   background-image: url(../img/ap-ui.png);
   background-size: cover;
-  min-height: 62px;
 
   display: grid;
   grid-template-areas:
-  "logo nav social"
-  "banner banner banner";
-  grid-template-columns: 2fr 8fr 2fr;
-  grid-template-rows: 1fr;
+  "nav"
+  "banner";
+}
+
+header a {
+  font-size: inherit;
 }
 
   nav {
     grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 4em;
   }
 
     ul.menu {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     ul.menu > li {
       display: inline-block;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 1.2em;
     }
 
     ul.menu > li > a:hover {
@@ -120,27 +104,17 @@ header {
     }
 
     div.logo {
-      grid-area: logo;
       font-size: 24px;
-      text-align: center;
-      /* vertical-align: middle; */
-      height: 100%;
-      /* content: ""; */
     }
 
       span.logo-begin {
         color: #ffffff;
-        /* display: inline-block;
-        vertical-align: middle; */
+
       }
 
       span.logo-end {
         color: #da2346;
       }
-
-    .social {
-      grid-area: social;
-    }
 
     .social a {
       font-size: inherit;
@@ -149,6 +123,7 @@ header {
     .social-wrapper {
       display: flex;
       justify-content: space-evenly;
+      flex-wrap: wrap;
     }
 
     .icons-round-header {
@@ -170,34 +145,38 @@ header {
     text-align: center;
 
     display: grid;
-    grid-template-columns: 1fr 2fr 8fr 2fr 1fr;
-    grid-template-rows: 30% 1fr 2fr 0.5fr 1fr 1fr 3fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas:
-    ". . . . ."
-    ". bl bt br ."
-    ". bl title br ."
-    "arrow-l bl descr br arrow-r"
-    ". bl button br ."
-    ". . . . ."
-    ". . . . ."
-    ;
+    "arrow-l descr arrow-r";
   }
 
     .banner-title {
       grid-area: title;
       font-size: 1.7em;
     }
-
-    .banner-description {
+    .banner-info {
       grid-area: descr;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px solid #706185;
+      border-left: 1px solid #66567C;
+      border-right: 1px solid #4B356A;
+      margin: 10em 0;
+    }
+
+    .border-bottom-short {
+      position: relative;
+      border-bottom: 2px solid #252525;
+      right: 82%;
+    }
+    .banner-description {
       font-size: 0.6em;
     }
 
-    .banner-button {
-      grid-area: button;
-      align-self: end;
-    }
-    .banner-button > button {
+    .banner button {
       padding: 0.5em 2.4em;
       border: 3px solid;
       background-color: transparent;
@@ -206,45 +185,15 @@ header {
 
     .arrow {
       grid-area: arrow-l;
-      border: 1px solid;
-      border-color: #706185;
-      border-radius: 5%;
-      font-size: 1.4em;
-      color: #706185;
-      width: 27px;
-      cursor: pointer;
-      justify-self: end;
+      display: grid;
+      align-items: center;
+      justify-content: center;
     }
     .arrow2 {
       grid-area: arrow-r;
-      border: 1px solid;
-      border-color: #706185;
-      border-radius: 5%;
-      font-size: 1.4em;
-      color: #706185;
-      width: 27px;
-      cursor: pointer;
-    }
-
-    .border-top {
-      grid-area: bt;
-      border-top: 1px solid #706185;
-    }
-
-    .border-right {
-      grid-area: br;
-      border-left: 1px solid #66567C;
-    }
-
-    .border-left {
-      grid-area: bl;
-      border-right: 1px solid #4B356A;
-    }
-
-    .border-bottom-short {
-      position: relative;
-      border-bottom: 2px solid #252525;
-      right: 82%;
+      display: grid;
+      align-items: center;
+      justify-content: center;
     }
 /********* END HEADER *********/
 
@@ -310,33 +259,34 @@ section.services {
   grid-template-rows: 1fr 5fr;
   grid-template-areas:
   "bsll bssl title bssr bslr"
-  "item1 item1 item2 item3 item3";
+  "sitems sitems sitems sitems sitems";
 }
 
-.exp {
-  margin: auto;
+.service_items {
+  grid-area: sitems;
+  display: flex;
+  position: relative;
 }
+  .service-pattern {
+    display: flex;
+    align-items: center;
+    background-color: #3F3F3F;
+  }
 
-.services-item1 {
-  grid-area: item1;
-  background-color: #3F3F3F;
-}
-.services-item2 {
-  grid-area: item2;
-  background-color: #097e89;
-}
-.services-item3 {
-  grid-area: item3;
-  background-color: #3F3F3F;
-}
+  .service-pattern-center {
+    display: flex;
+    align-items: center;
+    background-color: #097e89;
+  }
+
+    .service-item {
+      display: flex;
+      flex-direction: column;
+    }
 
 .item-title {
   font-size: 1.5em;
   color: #F5F5F5;
-}
-
-.item-pattern {
-  padding-top: 40%;
 }
 
 .item-text {
@@ -349,10 +299,42 @@ section.services {
   background-color: #3A393A;
 }
 
+.border-services-feedback-short-l {
+  grid-area: bssl;
+  border-top: 3px solid #FEFEFE;
+  position: relative;
+  top: 60%;
+}
+.border-services-feedback-short-r {
+  grid-area: bssr;
+  border-top: 3px solid #FEFEFE;
+  position: relative;
+  top: 60%;
+}
+
+.border-services-feedback-long-l {
+  grid-area: bsll;
+  border-top: 1px solid #FEFEFE;
+  position: relative;
+  top: 61%;
+}
+.border-services-feedback-long-r {
+  grid-area: bslr;
+  border-top: 1px solid #FEFEFE;
+  position: relative;
+  top: 61%;
+}
+
 .services-item-button {
   background-color: #939393;
   padding: 0.5em 2em;
   margin-top: 3em;
+}
+.service-selector {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
 }
 /********* END SERVICES *********/
 
@@ -375,55 +357,60 @@ section.feedback {
   grid-area: feed;
   background-color: #3F3F3F;
 
-  display: grid;
-  grid-template-areas:
-  "text clients clients clients";
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row:
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
   .feed-text {
-    grid-area: text;
-
-  }
-  .feed-clients {
-    grid-area: clients;
-    display: grid;
-    grid-template-areas:
-    "client1 client2 client3";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    max-width: 25%;
+    color: #CBC6C6;
   }
 
-    .feed-client1 {
-      grid-area: client1
+    .feed-line {
+      border-top: 2px solid #CBC6C6;
+      width: 50px;
+      height: 10px;
+      margin: 0 auto;
+      margin-top: 1em;
+      margin-bottom: 1em;
     }
-    .feed-client2 {
-      grid-area: client2
+    .feed-selector {
+      display: flex;
+      justify-content: space-around;
     }
-    .feed-client3 {
-      grid-area: client3
+
+  .feed-client {
+    min-width: 25%;
+  }
+
+    .client-name-wrapper {
+      color: #272727;
+      position: relative;
+      bottom: 3.5em;
+      width: 70%;
+      height: 2.5em;
+      margin: 0 auto;
+      font-size: 0.8em;
     }
-      .client-name-wrapper {
-        color: #272727;
-        position: relative;
-        bottom: 3.5em;
-        width: 70%;
-        height: 2.5em;
-        margin: 0 auto;
-        font-size: 0.8em;
+      .client-num {
+        background-color: white;
+        width: 24%;
+        float: left;
+        margin-right: 3%;
+        height: 100%;
       }
-        .client-num {
-          background-color: white;
-          width: 24%;
-          float: left;
-          margin-right: 3%;
-          height: 100%;
-        }
-        .client-name {
-          background-color: white;
-          width: 73%;
-          float:right;
-          text-align: left;
-        }
+      .client-name {
+        background-color: white;
+        width: 73%;
+        float:right;
+        text-align: left;
+      }
 /********* END FEEDBACK *********/
 
 /********* CLIENTS *********/
@@ -436,12 +423,11 @@ section.clients {
 
   display: grid;
   grid-template-columns: 3fr 1fr 4fr 1fr 3fr;
-  grid-template-rows: 1fr 0.2fr 2.5fr 0.8fr;
+  grid-template-rows: 1fr 0.2fr 2.5fr;
   grid-template-areas:
   "bsll bssl title bssr bslr"
   "dd dd dd dd dd"
-  "clients clients clients clients clients"
-  ". . . . .";
+  "clients clients clients clients clients";
 }
 
 .clients-title {
@@ -453,6 +439,8 @@ section.clients {
   display: flex;
   min-height: 116px;
   font-weight: bold;
+  margin: auto;
+  align-items: center;
 }
 
 .clients-divider {
@@ -463,40 +451,23 @@ section.clients {
 .clients-logo {
   grid-area: clients;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-  "logo1 logo2 logo3 logo4"
-  "logo5 logo6 logo7 logo8";
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
 }
+  .logo-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+    .client-logo-item {
+      display: flex;
+      justify-content: center;
+      width: 25%;
+      align-self: center;
+      margin: 2em auto;
+    }
 
-div.logo1 {
-  grid-area: logo1;
-}
-div.logo2 {
-  grid-area: logo2;
-}
-div.logo3 {
-  grid-area: logo3;
-}
-div.logo4 {
-  grid-area: logo4;
-}
-div.logo5 {
-  grid-area: logo5;
-}
-div.logo7 {
-  grid-area: logo6;
-}
-div.logo7 {
-  grid-area: logo7;
-}
-div.logo8 {
-  grid-area: logo8;
-}
 
 .border-clients-short-l {
   grid-area: bssl;
@@ -541,6 +512,7 @@ section.quote {
   grid-area: quote;
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -556,6 +528,7 @@ section.quote {
   height: 25%;
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   margin: auto 0;
 }
@@ -595,13 +568,13 @@ footer {
   grid-area: links;
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
 .footer-links > ul {
   list-style: none;
-  /* min-width: 128px; */
   line-height: 2.5em;
   font-family: "Helvetica LT Std";
   overflow: hidden;
@@ -610,7 +583,6 @@ footer {
 .footer-links > ul > li:first-child {
   font-size: 1em;
   margin-bottom: -0.5em;
-  /* border-bottom: 1px solid; */
 }
 
 .footer-links > ul > li > a {
@@ -622,6 +594,7 @@ footer {
   grid-area: socials;
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -634,12 +607,14 @@ footer {
 
 .subscribe-wrapper {
   display: flex;
+  flex-wrap: wrap;
   height: 2.7em;
   font-family: "Helvetica LT CondensedLight";
 }
 
 .footer-socials-icons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -669,3 +644,24 @@ footer a {
   justify-content: center;
 }
 /********* END FOOTER *********/
+
+@media screen and (max-width: 600px) {
+  .service_items {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 800px) {
+  .client-logo-item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 450px) {
+  ul.menu > li {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 0.2em;
+  }
+  .client-logo-item {
+    width: 100%;
+  }
+}
