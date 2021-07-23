@@ -1,3 +1,22 @@
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadPro-Regular.otf");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "HelveticaLTCondensedStandart";
+    src: url("../fonts/HelveticaLTStd LightCond.otf");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "HelveticaLTCondensedLight";
+    src: url("../fonts/Helvetica LT Condensed Light.ttf");
+    font-style: normal;
+    font-weight: 400;
+}
+
 /********* COMMON *********/
 * {
   padding: 0;
@@ -6,14 +25,14 @@
 
 body {
   color: #FEFEFE;
-  font-family: sansation;
+  font-family: 'Sansation Regular', arial;
   background-color: #3A393A;
 }
 
 a, a:visited, a:active {
   text-decoration: none;
   color: #ffffff;
-  font-family: sansation;
+  font-family: 'Sansation Regular', arial;
 }
 
 .uppercase {
@@ -538,7 +557,7 @@ section.quote {
   color: #007D86;
   width: 6em;
   border: 1px solid #FEFEFE;
-  font-family: "Myriad pro";
+  font-family: "MyriadProRegular";
 }
 
 input[type="text"] {
@@ -587,7 +606,7 @@ footer {
 
 .footer-links > ul > li > a {
   font-size: 1em;
-  font-family: "Helvetica LT CondensedLight";
+  font-family: "HelveticaLTCondensedLight";
 }
 
 .footer-socials {
@@ -609,7 +628,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   height: 2.7em;
-  font-family: "Helvetica LT CondensedLight";
+  font-family: "HelveticaLTCondensedLight";
 }
 
 .footer-socials-icons {
